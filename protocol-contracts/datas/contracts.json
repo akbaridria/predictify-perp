@@ -1,0 +1,51 @@
+{
+  "dataFeed": [
+    {
+      "name": "BTC-USDT",
+      "aggregrator": "0xE747418f2fe0F5794c5105f718b59b283E1B5e07",
+      "proxy": "0x4b0687ce6eC3Fe6c019467c744D0C563643BdFa4",
+      "contractAddress": ""
+    },
+    {
+      "name": "ETH-USDT",
+      "aggregrator": "0xf1AF997ffA9b43CcA41078d74C3F897DB998e9bd",
+      "proxy": "0xAEc43Fc8D4684b6A6577c3B18A1c1c6d3D55C28E",
+      "contractAddress": ""
+    },
+    {
+      "name": "KLAY-USDT",
+      "aggregrator": "0xf0d6Ccdd18B8A7108b901af872021109C27095bA",
+      "proxy": "0xC874f389A3F49C5331490145f77c4eFE202d72E1",
+      "contractAddress": ""
+    },
+    {
+      "name": "MATIC-USDT",
+      "aggregrator": "0x7970d00F24e65F1BC757896e32Db820A8e9260F0",
+      "proxy": "0x311Ec6D3a9db944aE0e92B083F1dbDe0cECcAA1C",
+      "contractAddress": ""
+    },
+    {
+      "name": "SOL-USDT",
+      "aggregrator": "0xBd01EdC16597f68E03607ba4b941596729ec78f7",
+      "proxy": "0x3C39209e85c1a27f1B992Bcf3416f5fC84764F2e",
+      "contractAddress": ""
+    },
+    {
+      "name": "DOT-USDT",
+      "aggregrator": "0x2b062807C6B3F8Ca5C366545d50aA19c114E9d7b",
+      "proxy": "0x7dc55064b6ea6B75F8A73DC142707aAd0A37541c",
+      "contractAddress": ""
+    },
+    {
+      "name": "BNB-USDT",
+      "aggregrator": "0x731A5AFB6e021579138Ea469B25C2ab46ff44199",
+      "proxy": "0xFA4CfAD7DBB1a0b3e85d0b736cf00289edDDDd5F",
+      "contractAddress": ""
+    }
+  ],
+  "usdcContract": "",
+  "hubContract": "0x0C24805507556313f0C3633558fc5e5A9dAE1d36",
+  "feedConsumerContract": "",
+  "liquidityContract": "",
+  "rpc": "https://public-en-baobab.klaytn.net"
+}
