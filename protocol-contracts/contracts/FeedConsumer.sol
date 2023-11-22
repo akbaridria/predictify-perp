@@ -11,14 +11,14 @@ contract FeedConsumer {
         dataFeed = IAggregator(aggregatorProxy);
     }
 
-    function getLatestData() public view returns (int256) {
-        ( , int256 answer, , , ) = dataFeed.latestRoundData();
-        return answer;
+    function getLatestData() public view returns (int256, uint) {
+        ( , int256 answer, uint startedAt , , ) = dataFeed.latestRoundData();
+        return (answer, startedAt);
     }
 
-    function getPrevData(uint80 _roundId) public view returns (int256) {
-        ( , int256 answer, , , ) = dataFeed.getRoundData(_roundId);
-        return answer;
+    function getPrevData(uint80 _roundId) public view returns (int256, uint) {
+        ( , int256 answer, uint startedAt , , ) = dataFeed.getRoundData(_roundId);
+        return (answer, startedAt);
     }
 
     function decimals() public view returns (uint8) {

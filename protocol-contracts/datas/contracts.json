@@ -43,9 +43,7 @@
       "contractAddress": ""
     }
   ],
-  "usdcContract": "",
-  "hubContract": "0x0C24805507556313f0C3633558fc5e5A9dAE1d36",
-  "feedConsumerContract": "",
-  "liquidityContract": "",
+  "usdtContract": "0x2a97437d90b2fCF7B7aA8eEB72488A6B8D79703A",
+  "hubContract": "0x9ed7ea38A0B2Ec142c11f0a156a5d69C6BDfB7ec",
   "rpc": "https://public-en-baobab.klaytn.net"
 }

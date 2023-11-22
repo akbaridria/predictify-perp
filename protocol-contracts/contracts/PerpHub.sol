@@ -30,10 +30,10 @@ contract PerpHub is Ownable {
 
   // constructor
   constructor(
-    address _usdc
+    address _usdt
   ) Ownable(msg.sender) {
 
-    erc20 = IERC20(_usdc);
+    erc20 = IERC20(_usdt);
 
   }
 
@@ -50,7 +50,8 @@ contract PerpHub is Ownable {
     require(_time > block.timestamp, "time should be higher than now");
     require(_time > 5 minutes, "should be more than 5 minutes");
     require(erc20.balanceOf(msg.sender) > _amount + _fee, "insufficient balance");
-    require(_amount > 5e6, "minimum 5 usdc");
+    require(_amount > 5e18, "minimum 5 usdc");
+    require(_fee >= _amount * 10 / 100, "wrong fee");
     require(_amount <= erc20.balanceOf(address(this)) * 10 / 100, "hit max bet size");
     // direction 0. up 1. down
     require(_direction < 2, "wrong direction");
@@ -62,11 +63,11 @@ contract PerpHub is Ownable {
     }
 
     // 2. transfer usdc to this contract
-    erc20.transferFrom(msg.sender, address(this), _amount);
+    erc20.transferFrom(msg.sender, address(this), _amount + _fee);
 
     // 3. get latest price
     FeedConsumer feedConsumer = FeedConsumer(oracle);
-    int256 price = feedConsumer.getLatestData();
+    (int256 price, ) = feedConsumer.getLatestData();
     
     // 4. create order
     // status order
@@ -155,20 +156,27 @@ contract PerpHub is Ownable {
     uint64 status = 1000;
 
     Types.Order memory order = orders[_counter];
-    if( order.status < 1 && order.times > block.timestamp && order.isEntity) {
-      // TODO check if the times is close
-      int256 exitPrice = getSpesificPrice(order.betOn, _round);
-      if(exitPrice > order.price) {
-        if(order.direction == 0) {
-          status = 3;
-        } else {
-          status = 2;
-        }
+    if( order.status < 1 && order.times < block.timestamp && order.isEntity) {
+      (int256 exitPrice, uint time) = getSpesificPrice(order.betOn, _round);
+      uint256 diffTime;
+      if(time > order.times) {
+        diffTime = order.times - time;
       } else {
-        if(order.direction == 0) {
-          status = 2;
+        diffTime = time - order.times;
+      }
+      if(diffTime < 20) {
+        if(exitPrice > order.price) {
+          if(order.direction == 0) {
+            status = 3;
+          } else {
+            status = 2;
+          }
         } else {
-          status = 3; 
+          if(order.direction == 0) {
+            status = 2;
+          } else {
+            status = 3; 
+          }
         }
       }
     }
@@ -176,7 +184,7 @@ contract PerpHub is Ownable {
   }
 
   // get spesfict price on round
-  function getSpesificPrice(string memory _key, uint80 time) internal view returns (int256) {
+  function getSpesificPrice(string memory _key, uint80 time) internal view returns (int256, uint) {
     address oracle = supportedMarket[_key];
     if(oracle == address(0)) {
       revert("unsupported market");
@@ -185,13 +193,15 @@ contract PerpHub is Ownable {
     FeedConsumer feedConsumer = FeedConsumer(oracle);
 
     int256 prices = 0;
+    uint times = 0;
 
-    try feedConsumer.getPrevData(time) returns (int256 result) {
+    try feedConsumer.getPrevData(time) returns (int256 result, uint startedAt) {
       prices = result;
+      times = startedAt;
     } catch {
-      
+      revert("can't get oracle data");
     }
-    return prices;
+    return (prices, times);
   }
 
   // admin functions
