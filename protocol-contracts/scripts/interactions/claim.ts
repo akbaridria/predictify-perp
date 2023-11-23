@@ -1,6 +1,6 @@
 import { ethers } from "hardhat";
 import datas from '../../datas/contracts.json'
-import { IAggregator__factory, PerpHub__factory } from "../../typechain-types";
+import { PerpHub__factory } from "../../typechain-types";
 
 async function main() {
   const contractAddress = datas.hubContract;
@@ -11,10 +11,10 @@ async function main() {
 
   const contract = PerpHub__factory.connect(contractAddress, c.runner);
 
-  const e = await contract.resolveRound([319599], [0], { gasLimit: 1000000});
-  await e.wait()
-  console.log(e.hash)
-
+  const e = await contract.claim(319648, 1, { gasLimit: 1000000});
+  await e.wait();
+  console.log(e.hash);
+  
 }
 
 main().catch((error) => {

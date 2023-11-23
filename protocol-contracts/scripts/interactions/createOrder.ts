@@ -13,7 +13,7 @@ async function main() {
 
   const endFix = "000000000000000000"
   const d = BigInt("100" + endFix);
-  const f = BigInt("15" + endFix );
+  const f = BigInt("10" + endFix );
   const t = await contract.createOrder(d, f , key, Math.floor(Date.now() / 1000) + 5 * 60, 0, { gasLimit: 1000000})
   const e = await t.wait()
   console.log(e?.hash);

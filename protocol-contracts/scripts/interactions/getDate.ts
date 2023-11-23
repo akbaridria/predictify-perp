@@ -16,17 +16,15 @@ async function main() {
     provider
   )
   let block = await dater.getDate(
-    new Date(1700666022 * 1000), 
+    new Date(1700732363 * 1000), 
     true, 
     false 
   );
   console.log(block.block);
 
   const contract = IAggregator__factory.connect(value, new ethers.JsonRpcProvider(rpc));
-  const res = await contract.queryFilter(contract.getEvent("AnswerUpdated"), block.block - 20, block.block)
-  for(let i = 0; i < res.length; i++) {
-    console.log(res[i].args)
-  }
+  const res = await contract.queryFilter(contract.getEvent("AnswerUpdated"), block.block - 50, block.block)
+  console.log(res[res.length -1].args);
 }
 
 main().catch((error) => {

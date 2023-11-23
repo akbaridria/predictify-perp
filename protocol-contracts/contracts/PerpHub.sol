@@ -52,7 +52,9 @@ contract PerpHub is Ownable {
     require(erc20.balanceOf(msg.sender) > _amount + _fee, "insufficient balance");
     require(_amount > 5e18, "minimum 5 usdc");
     require(_fee >= _amount * 10 / 100, "wrong fee");
-    require(_amount <= erc20.balanceOf(address(this)) * 10 / 100, "hit max bet size");
+    // limit every trade based on 10% of how much capital we had
+    require(_amount <= (erc20.balanceOf(address(this)) - totalCurrentTrade) * 10 / 100, "hit max bet size");
+
     // direction 0. up 1. down
     require(_direction < 2, "wrong direction");
 
@@ -68,7 +70,7 @@ contract PerpHub is Ownable {
     // 3. get latest price
     FeedConsumer feedConsumer = FeedConsumer(oracle);
     (int256 price, ) = feedConsumer.getLatestData();
-    
+
     // 4. create order
     // status order
     // 0. open
@@ -122,14 +124,15 @@ contract PerpHub is Ownable {
     require(orders[_counter].status == 0 || orders[_counter].status == 3, "has been resolved");
 
     if(orders[_counter].status == 3) {
-      transferAndUpdate(msg.sender, orders[_counter].amount * 2, _counter);
+      transferAndUpdate(msg.sender, orders[_counter].amount, _counter);
     } else {
       uint64 status = check(_round, _counter);
       if(status != 1000) {
         if(status == 3) {
-          transferAndUpdate(msg.sender, orders[_counter].amount * 2, _counter);
+          transferAndUpdate(msg.sender, orders[_counter].amount, _counter);
         }
         if(status == 2) {
+          orders[_counter].status = status;
           totalCurrentTrade -= orders[_counter].amount;
         }
       }
@@ -142,10 +145,10 @@ contract PerpHub is Ownable {
     uint256 _amount,
     uint256 _counter
   ) internal {
-    erc20.transfer(_user, _amount);
+    erc20.transfer(_user, _amount * 2);
     orders[_counter].status = 4;
-    totalCurrentTrade -= orders[_counter].amount * 2;
-    emit Claim(_user, _amount, _counter);
+    totalCurrentTrade -= _amount;
+    emit Claim(_user, _amount * 2, _counter);
   }
 
   // check and adjust status
@@ -160,11 +163,13 @@ contract PerpHub is Ownable {
       (int256 exitPrice, uint time) = getSpesificPrice(order.betOn, _round);
       uint256 diffTime;
       if(time > order.times) {
-        diffTime = order.times - time;
-      } else {
         diffTime = time - order.times;
+      } else {
+        diffTime = order.times - time;
       }
+      
       if(diffTime < 20) {
+
         if(exitPrice > order.price) {
           if(order.direction == 0) {
             status = 3;

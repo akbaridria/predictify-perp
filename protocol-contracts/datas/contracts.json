@@ -1,49 +1,49 @@
 {
   "dataFeed": [
     {
-      "name": "BTC-USDT",
-      "aggregrator": "0xE747418f2fe0F5794c5105f718b59b283E1B5e07",
-      "proxy": "0x4b0687ce6eC3Fe6c019467c744D0C563643BdFa4",
+      "name": "ATOM-USDT",
+      "aggregrator": "0xD84659b5e6d7123e21ee80f13685D733a9a9a0b0",
+      "proxy": "0x886703ebE4E18645B708b3fC9f528d2a9aed8D8b",
       "contractAddress": ""
     },
     {
-      "name": "ETH-USDT",
-      "aggregrator": "0xf1AF997ffA9b43CcA41078d74C3F897DB998e9bd",
-      "proxy": "0xAEc43Fc8D4684b6A6577c3B18A1c1c6d3D55C28E",
+      "name": "DOGE-USDT",
+      "aggregrator": "0x98F4BC9fE125c725423deda5418681aB7c8F2CF3",
+      "proxy": "0x464fBa38a41526fc61Ca6Ed2C9cD7B38d822B72a",
       "contractAddress": ""
     },
     {
-      "name": "KLAY-USDT",
-      "aggregrator": "0xf0d6Ccdd18B8A7108b901af872021109C27095bA",
-      "proxy": "0xC874f389A3F49C5331490145f77c4eFE202d72E1",
+      "name": "LTC-USDT",
+      "aggregrator": "0x151A407169e1B594fb26F002A4c3c9fc41f1deef",
+      "proxy": "0x597a5ab68296d4dEC1296d8A96eFb3FC8b2BaE3f",
       "contractAddress": ""
     },
     {
-      "name": "MATIC-USDT",
-      "aggregrator": "0x7970d00F24e65F1BC757896e32Db820A8e9260F0",
-      "proxy": "0x311Ec6D3a9db944aE0e92B083F1dbDe0cECcAA1C",
+      "name": "XRP-USDT",
+      "aggregrator": "0x92dD2d62513bC4811666C4EF27248E902e41f18c",
+      "proxy": "0xDcb088788722198aaED3F4F7a396558eC98cfCD0",
       "contractAddress": ""
     },
     {
-      "name": "SOL-USDT",
-      "aggregrator": "0xBd01EdC16597f68E03607ba4b941596729ec78f7",
-      "proxy": "0x3C39209e85c1a27f1B992Bcf3416f5fC84764F2e",
+      "name": "ADA-USDT",
+      "aggregrator": "0x70cDE6bE67486017C52215Ad5d6740ce8EaBC9b8",
+      "proxy": "0xB9C1839A40cED59Fb9e55Eb52a3B8B7E62aF1568",
       "contractAddress": ""
     },
     {
-      "name": "DOT-USDT",
-      "aggregrator": "0x2b062807C6B3F8Ca5C366545d50aA19c114E9d7b",
-      "proxy": "0x7dc55064b6ea6B75F8A73DC142707aAd0A37541c",
+      "name": "FTM-USDT",
+      "aggregrator": "0x88E3CD567754A0f5068aa4053F9887e97539F764",
+      "proxy": "0x271ce3EB7cb9124aEaa26D18E2c448b10f2C2D21",
       "contractAddress": ""
     },
     {
-      "name": "BNB-USDT",
-      "aggregrator": "0x731A5AFB6e021579138Ea469B25C2ab46ff44199",
-      "proxy": "0xFA4CfAD7DBB1a0b3e85d0b736cf00289edDDDd5F",
+      "name": "UNI-USDT",
+      "aggregrator": "0x82aC2966dD5843e718D0EaeC7108bb4778eeF66B",
+      "proxy": "0xa7A93c5eaabD1c458522F00a53897D5f32Da232d",
       "contractAddress": ""
     }
   ],
-  "usdtContract": "0x2a97437d90b2fCF7B7aA8eEB72488A6B8D79703A",
-  "hubContract": "0x9ed7ea38A0B2Ec142c11f0a156a5d69C6BDfB7ec",
+  "usdtContract": "0x96d57427F710db5F2Ea08dBAb1d0Df34ACe1CF2b",
+  "hubContract": "0x1643AcBACC5304d6CAD0ea1Bec39C06bFbeE7524",
   "rpc": "https://public-en-baobab.klaytn.net"
 }

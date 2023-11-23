@@ -6,15 +6,11 @@ async function main() {
   const contractAddress = datas.hubContract;
   const key = datas.dataFeed[0].name;
   const value = datas.dataFeed[0].aggregrator;
-  
-  const c = await ethers.getContractFactory("PerpHub");
 
-  const contract = PerpHub__factory.connect(contractAddress, c.runner);
+  const contract = IAggregator__factory.connect(contractAddress, new ethers.JsonRpcProvider(datas.rpc));
 
-  const e = await contract.resolveRound([319599], [0], { gasLimit: 1000000});
-  await e.wait()
-  console.log(e.hash)
-
+  const e = await contract.getRoundData(319395)
+  console.log(e, 892205000n);
 }
 
 main().catch((error) => {

@@ -11,8 +11,8 @@ async function main() {
 
   const contract = PerpHub__factory.connect(contractAddress, c.runner);
 
-  const e = await contract.orders(0)
-  console.log(e);
+  const e = await contract.orders(1)
+  console.log(e, await contract.totalCurrentTrade());
 }
 
 main().catch((error) => {
