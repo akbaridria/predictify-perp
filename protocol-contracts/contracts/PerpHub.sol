@@ -14,6 +14,7 @@ contract PerpHub is Ownable {
   IERC20 erc20;
   uint256 public counter;
   uint256 public totalCurrentTrade;
+  mapping(address => uint256[]) public userOrder;
 
   // modifiers
   modifier onlyEOA() {
@@ -88,6 +89,8 @@ contract PerpHub is Ownable {
       betOn: _betOn,
       status: 0
     });
+
+    userOrder[msg.sender].push(counter);
 
     totalCurrentTrade += _amount;
     counter++;

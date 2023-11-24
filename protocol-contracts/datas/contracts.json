@@ -35,12 +35,6 @@
       "aggregrator": "0x88E3CD567754A0f5068aa4053F9887e97539F764",
       "proxy": "0x271ce3EB7cb9124aEaa26D18E2c448b10f2C2D21",
       "contractAddress": ""
-    },
-    {
-      "name": "UNI-USDT",
-      "aggregrator": "0x82aC2966dD5843e718D0EaeC7108bb4778eeF66B",
-      "proxy": "0xa7A93c5eaabD1c458522F00a53897D5f32Da232d",
-      "contractAddress": ""
     }
   ],
   "usdtContract": "0x96d57427F710db5F2Ea08dBAb1d0Df34ACe1CF2b",
