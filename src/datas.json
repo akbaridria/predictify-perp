@@ -1,0 +1,28 @@
+{
+  "faq": [
+    {
+      "questions": "How does the prediction system work?",
+      "answer": "Users predict whether the price of a particular asset/crypto will rise or fall. If the prediction is correct, the user earns twice their invested amount."
+    },
+    {
+      "questions": "What oracle service is used for data feeds on this platform?",
+      "answer": "We utilize Orakle.Network as our oracle service provider for data feeds."
+    },
+    {
+      "questions": "What oracle service is used for data feeds on this platform?",
+      "answer": "We utilize Orakle.Network as our oracle service provider for data feeds. Orakle.Network offers decentralized and reliable data feeds, ensuring accurate and transparent information crucial for making informed predictions on asset movements within our platform."
+    },
+    {
+      "questions": "Can I change or cancel my prediction after placing it?",
+      "answer": "once a prediction is placed, it cannot be altered or canceled. Users are encouraged to make informed decisions before confirming their predictions."
+    },
+    {
+      "questions": "Are there any fees for participating in predictions?",
+      "answer": "Yes, there is a fee structure in place. A 10% fee is applied to every trade that you placed"
+    },
+    {
+      "questions": "Is there a limit to the trade size on this platform?",
+      "answer": "Yes, the maximum trade size is 10% of the available liquidity minus the open trades volume. This dynamic calculation ensures that the platform maintains sufficient liquidity to support all user trades while preventing any one trade from disproportionately impacting the market."
+    }
+  ]
+}

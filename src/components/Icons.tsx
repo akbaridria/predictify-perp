@@ -267,3 +267,124 @@ export const Ftm = ({ customClass }: PropsIcon) => {
     </svg>
   );
 };
+
+export const Decentralized = ({ customClass }: PropsIcon) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      className={customClass}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+        d="M344 280l88-88M232 216l64 64M80 320l104-104"
+      />
+      <circle
+        cx="456"
+        cy="168"
+        r="24"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+      />
+      <circle
+        cx="320"
+        cy="304"
+        r="24"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+      />
+      <circle
+        cx="208"
+        cy="192"
+        r="24"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+      />
+      <circle
+        cx="56"
+        cy="344"
+        r="24"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+      />
+    </svg>
+  );
+};
+
+export const Stopwatch = ({ customClass }: PropsIcon) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      className={customClass}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
+        d="M256 232v-80"
+      />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="48"
+        d="M256 88V72M132 132l-12-12"
+      />
+      <circle
+        cx="256"
+        cy="272"
+        r="32"
+        fill="none"
+        stroke="currentColor"
+        strokeMiterlimit="10"
+        strokeWidth="32"
+      />
+      <path
+        d="M256 96a176 176 0 10176 176A176 176 0 00256 96z"
+        fill="none"
+        stroke="currentColor"
+        strokeMiterlimit="10"
+        strokeWidth="32"
+      />
+    </svg>
+  );
+};
+
+export const Bolt = ({ customClass }: PropsIcon) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={customClass}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+      />
+    </svg>
+  );
+};
