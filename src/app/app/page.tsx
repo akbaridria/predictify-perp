@@ -24,14 +24,13 @@ export default function Home() {
       setMaxPrice(result.maxPrice);
       setMintPrice(result.minPriced);
       setPercentageChange(result.changePercentage);
-      console.log(result);
     }
 
     getData()
 
     const interval = setInterval(() => {
       getData()
-    }, 15000);
+    }, 1500000000);
 
     return () => clearInterval(interval);
 
