@@ -26,8 +26,8 @@ contract PerpHub is Ownable {
   event MarketAdded(string market, address oracleConsumer);
   event MarketRemoved(string market, address oracleConsumer);
   event MarketShutDown(bool isShutDown);
-  event CreateOrder(address user, uint256 betAmount, string betOn, uint256 time);
-  event Claim(address user, uint256 amount, uint256 counter);
+  event CreateOrder(address indexed user, uint256 betAmount, string betOn, uint256 time, uint256 rounId);
+  event Claim(address indexed user, uint256 amount, uint256 counter);
 
   // constructor
   constructor(
@@ -51,10 +51,10 @@ contract PerpHub is Ownable {
     require(_time > block.timestamp, "time should be higher than now");
     require(_time > 5 minutes, "should be more than 5 minutes");
     require(erc20.balanceOf(msg.sender) > _amount + _fee, "insufficient balance");
-    require(_amount > 5e18, "minimum 5 usdc");
+    require(_amount >= 5e18, "minimum 5 usdc");
     require(_fee >= _amount * 10 / 100, "wrong fee");
     // limit every trade based on 10% of how much capital we had
-    require(_amount <= (erc20.balanceOf(address(this)) - totalCurrentTrade) * 10 / 100, "hit max bet size");
+    require(_amount <= (erc20.balanceOf(address(this)) - totalCurrentTrade * 2) * 10 / 100, "hit max bet size");
 
     // direction 0. up 1. down
     require(_direction < 2, "wrong direction");
@@ -96,7 +96,7 @@ contract PerpHub is Ownable {
     counter++;
 
     // 5. emit event create order
-    emit CreateOrder(msg.sender, _amount, _betOn, _time);
+    emit CreateOrder(msg.sender, _amount, _betOn, _time, counter - 1);
   }
 
   // resolve unsolved trade

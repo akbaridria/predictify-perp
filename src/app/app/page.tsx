@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(270px,350px)] gap-4 container mx-auto my-4">
           <ChartMarket data={dataChart} tokenPair={selectedToken} />
-          <FormMarket />
+          <FormMarket token={selectedToken} />
           <MarketPosition />
         </div>
       </div>

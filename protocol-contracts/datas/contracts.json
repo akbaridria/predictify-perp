@@ -38,7 +38,7 @@
     }
   ],
   "usdtContract": "0x96d57427F710db5F2Ea08dBAb1d0Df34ACe1CF2b",
-  "hubContract": "0x1643AcBACC5304d6CAD0ea1Bec39C06bFbeE7524",
+  "hubContract": "0x3332628072A6df5bEB176D4894C61fb79eE0A68C",
   "rpc": "https://public-en-baobab.klaytn.net",
   "block-explorer": "https://baobab.klaytnfinder.io/",
   "chainId": 1001

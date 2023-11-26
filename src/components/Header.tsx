@@ -171,7 +171,7 @@ export const DoFuacet = ({setTx}: PropsFaucet) => {
   }, [data, setTx])
 
   return (
-    <Button disabled={isLoading} onClick={() => (console.log('faucet'), write?.())}>
+    <Button disabled={isLoading} onClick={() => (write?.())}>
       <div className="flex items-center justify-center gap-2">
         {
           isLoading && <Spinner customClass={"w-4 h-4"} />

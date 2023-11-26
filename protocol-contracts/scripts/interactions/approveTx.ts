@@ -11,7 +11,7 @@ async function main() {
 
   const contract = DummyUSDT__factory.connect(contractAddress, c.runner);
   const endFix = "000000000000000000"
-  const e = await contract.approve(datas.hubContract, BigInt("110" + endFix))
+  const e = await contract.approve(datas.hubContract, BigInt("1" + endFix))
   await e.wait()
   console.log(e.hash)
   // const endFix = "000000000000000000"
