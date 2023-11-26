@@ -1,8 +1,8 @@
-import { IAggregator__factory } from '../../protocol-contracts/typechain-types/'
+import { IAggregator__factory, DummyUSDT__factory } from '../../protocol-contracts/typechain-types/'
 import datas from '../../protocol-contracts/datas/contracts.json'
 import { ethers } from 'ethers'
 import { AreaData, Time, UTCTimestamp, WhitespaceData } from 'lightweight-charts';
-
+import { } from 'wagmi'
 
 export const getChartData = async (pair: string) => {
   const aggregratorAddress = datas.dataFeed.filter((item) => item.name === pair);
@@ -10,7 +10,7 @@ export const getChartData = async (pair: string) => {
   let maxPrice = 0;
   let minPriced = Number.MAX_SAFE_INTEGER;
   let changePercentage = 0;
-
+  
   if(aggregratorAddress.length > 0) {
     const provider = new ethers.JsonRpcProvider(datas.rpc)
     const contract = IAggregator__factory.connect(aggregratorAddress[0].aggregrator, provider );

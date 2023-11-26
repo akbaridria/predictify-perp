@@ -4,7 +4,7 @@ import { Arrow, Warn } from "@/components/Icons";
 import { DropdownAssets } from "./dropdowns/DropdownsAssets";
 import { useEffect, useState } from "react";
 import datas from '../../../../protocol-contracts/datas/contracts.json';
-import { trimWallet } from "@/scripts/helper";
+import { trimWallet } from "@/helper";
 
 interface Props {
   selectedToken: string;

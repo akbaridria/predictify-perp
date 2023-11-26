@@ -15,3 +15,7 @@ export const listIcons = {
   'ADA-USDT': Cardano,
   'FTM-USDT': Ftm
 }
+
+export const trimWallet = (wallet: string) => {
+  return wallet.slice(0,6) + '...' + wallet.slice(-4);
+}
