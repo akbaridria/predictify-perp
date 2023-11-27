@@ -35,7 +35,7 @@ export const getChartData = async (pair: string) => {
       }
     })
   }
-  
+  //@ts-ignore
   changePercentage = (data[data.length - 1].value - data[0].value) / 100
 
   return {
