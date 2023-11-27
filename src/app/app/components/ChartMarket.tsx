@@ -35,7 +35,7 @@ export const ChartMarket = ({ data, tokenPair } : Props) => {
         height: 500,
       });
     };
-
+    // @ts-ignore
     const chart = createChart(chartContainerRef.current, {
       width: chartContainerRef.current ? chartContainerRef.current.clientWidth : 300,
       layout: {
@@ -65,10 +65,11 @@ export const ChartMarket = ({ data, tokenPair } : Props) => {
       crosshairMarkerVisible: false
     });
     newSeries.setData(data);
-
+    
     chart.subscribeCrosshairMove(param => {
       if(param.time) {
         const data = param.seriesData.get(newSeries);
+        // @ts-ignore
 		    const price = data.value !== undefined ? data.value : data.close;
         setPrice(price);
       } else {
