@@ -20,6 +20,7 @@ export const MarketPosition = () => {
   useEffect(() => {
     const getData = async () => {
       setLoading(true)
+      setAllPosition([])
       const res = await getUserPositions(address as string)
       setAllPosition(res);
       setLoading(false)
@@ -60,7 +61,7 @@ export const MarketPosition = () => {
               <td className="p-4 whitespace-nowrap">Entry Price</td>
               <td className="p-4 whitespace-nowrap">Final Price</td>
               <td className="p-4 whitespace-nowrap">Direction</td>
-              <td className="p-4 whitespace-nowrap">Duration</td>
+              <td className="p-4 whitespace-nowrap">Expire Time</td>
               <td className="p-4 whitespace-nowrap"></td>
             </tr>
           </thead>
@@ -68,7 +69,7 @@ export const MarketPosition = () => {
             {
               allPosition.toReversed().map((item, index) => {
                 return (
-                  <tr key={`open-position-${index}`} className="border-y-[1px] border-primary-gray">
+                  <tr key={`open-position-${index}`} className={`border-y-[1px] border-primary-gray ${item.status === 2 ? 'text-red-600' : item.status === 3 || item.status === 4 ? 'text-green-600' : null}`}>
                     <td className="p-4 whitespace-nowrap">{ item.symbol }</td>
                     <td className="p-4 whitespace-nowrap">{ item.size } USDT</td>
                     <td className="p-4 whitespace-nowrap">{ item.entryPrice} </td>

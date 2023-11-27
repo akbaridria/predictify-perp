@@ -30,7 +30,7 @@ export default function Home() {
 
     const interval = setInterval(() => {
       getData()
-    }, 1500000000);
+    }, 10000);
 
     return () => clearInterval(interval);
 
