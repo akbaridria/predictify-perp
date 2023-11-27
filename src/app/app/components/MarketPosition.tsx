@@ -19,22 +19,26 @@ export const MarketPosition = () => {
   const a = [1,1,1,1]
   useEffect(() => {
     const getData = async () => {
-      setLoading(true)
-      setAllPosition([])
-      const res = await getUserPositions(address as string)
-      setAllPosition(res);
-      setLoading(false)
+      if(address && !!address) {
+        setLoading(true)
+        setAllPosition([])
+        const res = await getUserPositions(address as string)
+        setAllPosition(res);
+        setLoading(false)
+      }
     }
 
     getData()
   }, [address])
 
   const getLatestData = async () => {
-    setLoading(true);
-    setAllPosition([])
-    const res = await getUserPositions(address as string)
-    setAllPosition(res);
-    setLoading(false);
+    if(address && !!address) {
+      setLoading(true);
+      setAllPosition([])
+      const res = await getUserPositions(address as string)
+      setAllPosition(res);
+      setLoading(false);
+    }
   }
 
   const formatDate = (date: number) => {

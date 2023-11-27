@@ -58,6 +58,7 @@ export interface Position {
   oracleRoundId: number | undefined
 }
 export const getUserPositions = async (walletAddr: string) => {
+    console.log(walletAddr)
     const provider = new ethers.JsonRpcProvider(datas.rpc)
     const wallet = new ethers.Wallet(process.env.NEXT_PUBLIC_PRIVATE_KEY as string);
     const signer = wallet.connect(provider);
