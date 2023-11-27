@@ -44,6 +44,7 @@ export default function Home() {
             <OverviewMarket 
               selectedToken={selectedToken} 
               setToken={setSelectedToken} 
+              //@ts-ignore
               price={dataChart.length > 0 ? dataChart[dataChart.length - 1].value : 0}
               maxPrice={maxPrice}
               minPrice={minPrice}
