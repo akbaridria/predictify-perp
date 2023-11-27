@@ -3,7 +3,7 @@
 PredictifyPerp is a decentralized platform on the Klaytn network that enables users to predict asset prices with a minimum time interval of 5 minutes. Powered by Orakle.Network for precise price feeds, this platform empowers users to forecast asset movements and potentially double their investment upon accurate predictions.
 
 ### Demo App:
-[Link to Demo App](#) *Link to the demo app goes here*
+[predictify-perp.vercel.app](https://predictify-perp.vercel.app/)
 
 ### Technology Stack:
 - **Solidity:** Smart contract development language for creating secure predictions.
