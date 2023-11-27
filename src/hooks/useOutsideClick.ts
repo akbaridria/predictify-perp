@@ -7,6 +7,7 @@ export const useOutsideClick = (callback: MouseEventHandler, reference: React.Re
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node) && !reference.current?.contains(event.target as Node)) {
+        // @ts-ignore
         callback();
       }
     };
