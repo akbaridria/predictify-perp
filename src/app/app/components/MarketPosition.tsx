@@ -25,6 +25,8 @@ export const MarketPosition = () => {
         const res = await getUserPositions(address as string)
         setAllPosition(res);
         setLoading(false)
+      } else {
+        setAllPosition([])
       }
     }
 
@@ -38,6 +40,8 @@ export const MarketPosition = () => {
       const res = await getUserPositions(address as string)
       setAllPosition(res);
       setLoading(false);
+    } else {
+      setAllPosition([])
     }
   }
 
