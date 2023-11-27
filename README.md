@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PredictifyPerp - Real-Time Asset Price Prediction on Klaytn
 
-## Getting Started
+PredictifyPerp is a decentralized platform on the Klaytn network that enables users to predict asset prices with a minimum time interval of 5 minutes. Powered by Orakle.Network for precise price feeds, this platform empowers users to forecast asset movements and potentially double their investment upon accurate predictions.
 
-First, run the development server:
+### Demo App:
+[Link to Demo App](#) *Link to the demo app goes here*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Technology Stack:
+- **Solidity:** Smart contract development language for creating secure predictions.
+- **Orakle.Network:** Utilized as the oracle service providing accurate price feeds.
+- **Wagmi.sh:** Wallet management tool for "connect wallet", contract interactiona and sending transaction
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Illustration:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![flow-predictifyperp](https://github.com/akbaridria/predictify-perp/assets/26589426/96497460-559d-45cf-848c-34444e45e1da)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Contract Address (Klaytn Testnet Baobab):
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| contract name      | Contract Address                                    | 
+|--------------------|-----------------------------------------------------|
+| PredictifyPerp Hub | 0x3332628072A6df5bEB176D4894C61fb79eE0A68C          |
+| DummyUSDT          | 0x96d57427F710db5F2Ea08dBAb1d0Df34ACe1CF2b          |
