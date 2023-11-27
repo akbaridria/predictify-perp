@@ -33,6 +33,7 @@ export const DropdownAssets = ({ isOpen, open, value, setToken }: Props) => {
 }
 
 export const getIcon = (props: string) => {
+  //@ts-ignore
   const Icon = listIcons[props];
   return (
     <Icon customClass="w-6 h-6 rounded-full border-[1px] border-white" />
