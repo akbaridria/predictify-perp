@@ -24,11 +24,10 @@ export const ChartMarket = ({ data, tokenPair } : Props) => {
   const areaBottomColor = "rgb(234, 88, 12, 0)";
 
   const chartContainerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleResize = () => {
       chart.applyOptions({
-        width: chartContainerRef.current.clientWidth,
+        width: chartContainerRef.current ? chartContainerRef.current.clientWidth : 300,
         layout: {
           background: { type: ColorType.Solid, color: backgroundColor },
           textColor,
@@ -38,7 +37,7 @@ export const ChartMarket = ({ data, tokenPair } : Props) => {
     };
 
     const chart = createChart(chartContainerRef.current, {
-      width: chartContainerRef.current.clientWidth,
+      width: chartContainerRef.current ? chartContainerRef.current.clientWidth : 300,
       layout: {
         background: { type: ColorType.Solid, color: backgroundColor },
         textColor,
