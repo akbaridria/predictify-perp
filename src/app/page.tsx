@@ -26,7 +26,7 @@ export default function Home() {
                 </Button>
               </a>
               <div>
-                <a href="/learn-more">
+                <a href="https://github.com/akbaridria/predictify-perp#readme" target="_blank">
                   <div className="flex items-center gap-2">
                     <div>Learn more</div>
                     <Arrow customClass="w-4 h-4 stroke-white rotate-[315deg]" />

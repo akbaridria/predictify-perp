@@ -7,7 +7,9 @@ export const Footer = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Logo />
-          <Github customClass="w-6 h-6 fill-white" />
+          <a href="https://github.com/akbaridria/predictify-perp" target="_blank" rel="noopener noreferrer">
+            <Github customClass="w-6 h-6 fill-white" />
+          </a>
         </div>
       </div>
     </div>
