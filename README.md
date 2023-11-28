@@ -7,7 +7,7 @@ PredictifyPerp is a decentralized platform on the Klaytn network that enables us
 
 ### Technology Stack:
 - **Solidity:** Smart contract development language for creating secure predictions.
-- **Orakle.Network:** Utilized as the oracle service providing accurate price feeds.
+- **Orakl.Network:** Utilized as the oracle service providing accurate price feeds.
 - **Wagmi.sh:** Wallet management tool for "connect wallet", contract interactiona and sending transaction
 
 ### Illustration:
