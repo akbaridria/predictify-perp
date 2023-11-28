@@ -29,6 +29,9 @@ export default function RootLayout({
             {children}
             <Footer />
           </div>
+          <div className='fixed right-0 bottom-0 z-[100] p-2 rounded-ss-lg bg-orange-600'>
+            <div>You are on klaytn klaytn testnet</div>
+          </div>
         </Providers>
       </body>
     </html>
