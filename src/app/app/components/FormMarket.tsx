@@ -118,7 +118,7 @@ export const FormMarket = ({ token }: FormMarketProps) => {
             <input type="text" className="bg-transparent focus:outline-none w-full" placeholder="0.0" value={spesificTime} onChange={(e) => setSpesificTime(Number(e.target.value))} />
           </div>
           {
-            (time === 'minutes' ? spesificTime < 5 : false) && <div className="text-red-600">time should be higher than 5 minutes {String(spesificTime < 5)}</div>
+            (time === 'minutes' ? spesificTime < 5 : false) && <div className="text-red-600">time should be higher than 5 minutes</div>
           }
         </div>
       </div>
@@ -153,7 +153,7 @@ export const FormMarket = ({ token }: FormMarketProps) => {
           }
           <Button onClick={() => setOpenModalOrder(true)} disabled={!validForm}>
             <div>
-              Submit Order { String(validForm) }
+              Submit Order
             </div>
           </Button>
         </div>
